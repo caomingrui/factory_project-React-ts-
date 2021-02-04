@@ -3,6 +3,7 @@ import {Table, Switch, Space, Button, DatePicker} from 'antd';
 import {useStore} from "../../../store/vueStore/store";
 import {mutations, Store} from "../../../store/vueStore";
 import DescriptionsList from "../component/Descriptions";
+import TableDa from "../component/tabel";
 import ModalView from "../component/Modal";
 import {useChangeDoc} from "../../../utils/hooks";
 
@@ -43,11 +44,9 @@ export default memo(() => {
     }
 
     // 处理多列
-    const multipleCol = (resInd: any, index: any, da: any, i: number = 0) => {
-        console.log(index)
+    function multipleCol<T> (resInd: any, index: number, da: any, i: number = 0) {
         data.tabelData.map((res: typeof data.tabelData) => {
-            if (res.key === resInd) {
-                console.log(res);
+            if (res.key === resInd.key) {
 
                 Object.keys(res).map(list => {
                     if (i == 0) {
@@ -71,13 +70,7 @@ export default memo(() => {
                         if (index == 2) {
                             da[list + '2'] = res[list];
                             da['ind2'] = 3;
-
                         }
-
-                        // if (index <= 2) {
-                        //     da[list + (index + 1)] = res[list];
-                        //     da['ind' + index] = index + 1;
-                        // }
                     }
                     if ( i != 0) {
                         if (index > 2) {
@@ -102,9 +95,6 @@ export default memo(() => {
                                 da[list + 2] = res[list];
                                 da['ind2'] = 3;
                             }
-
-                            // da[list + (index%3 - 2)] = res[list];
-                            // da['ind' + index%3] = index + 1;
                         }
                     }
                 });
@@ -116,53 +106,136 @@ export default memo(() => {
     // 单导出
     const exportData = (): void => {
         const key = data.checkTabelData;
-        if (key && key.constructor == Array) {
+        console.log(key)
+        Object.keys(key).map((res, ind) => {
+
             let da: any = {};
             let dd: any = {};
-            key.map((resInd, index) => {
-                const aa = multipleCol(resInd, index, dd);
-                if (key.length < 4) {
+            if (key && key[res].constructor == Array) {
+                // 获取名称
+                let documentName = res;
+                key[res].map((resInd: any, index: number) => {
                     console.log(index)
-                    console.log('dddddddddddddddd')
-                    const aa = multipleCol(resInd, index, da);
-                    if (index == key.length - 1) {
-                        data.tabelData.map((res: typeof data.tabelData) => {
-                            if (res.key === resInd) {
-                                changeDoc(res.keyName + '.docx', aa);
-                            }
-                        })
-                    }
-                }
-                else {
-                    console.log(index)
-                    let arr: any[] = [];
-                    // ((index + 1)%3 + Math.floor((index + 1)/3))
-                    for (let i = 0; i < Math.floor((index)/3) + 1; i++) {
-                        console.log(i)
-                       let dacmr =  multipleCol(resInd, index, da, i);
-                        console.log(dacmr)
-                        arr.push(JSON.parse(JSON.stringify(dacmr)));
-                        console.log(arr)
-                        let list = [...arr, aa];
-                        let hash: any = {};
+                    // 第一份数据
+                    const firstData = multipleCol(resInd, index, dd);
 
-                        const newArr = list.reduceRight((item, next) => {
-                            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-                            hash[next.key] ? '' : hash[next.key] = true && item.push(next);
-                            return item
-                        }, []);
-                        console.log(newArr)
-                        // if (index == key.length - 1) {
-                        //     data.tabelData.map((res: typeof data.tabelData) => {
-                        //         if (res.key === resInd) {
-                        //             changeDoc(res.keyName + '.docx', arr[i]);
-                        //         }
-                        //     })
+                    // 数据小于 3的时候
+                    if (key[res].length < 4) {
+                        // if (Object.keys(key).length > 1) {
+
+                            console.log(documentName, index)
+                            const data = multipleCol(resInd, index, da);
+
+                            if (index == key[res].length - 1) {
+                                console.log(data)
+                                changeDoc( documentName + '.docx', data);
+                            }
+                        // }
+                        // else {
+                        //     if (index == key[res].length - 1) {
+                        //         console.log(resInd)
+                        //         const data = multipleCol(resInd, index, da);
+                        //         console.log(data)
+                        //         console.log(documentName, index)
+                        //         // changeDoc( documentName + '.docx', data);
+                        //     }
                         // }
                     }
-                }
-            });
-        }
+                    // 反之多张数据
+                    else {
+                        let newArr;
+                        let arr: any[] = [];
+                        // ((index + 1)%3 + Math.floor((index + 1)/3))
+                        // 判断导出几次
+                        for (let i = 0; i < Math.floor((index) / 3) + 1; i++) {
+                            // 获取每次循环拿到的数据
+                            let dacmr = multipleCol(resInd, index, da, i);
+
+                            arr.push(JSON.parse(JSON.stringify(dacmr)));
+                            console.log(arr)
+                            // 存在一个问题 第一次数据不准确， 所以直接那现成的拼凑，存在重复数据
+                            let list = [...arr, firstData];
+                            console.log(list)
+                            let hash: any = {};
+
+                            // 去除重复数据
+                            newArr = list.reduceRight((item, next) => {
+                                // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+                                hash[next.key] ? '' : hash[next.key] = true && item.push(next);
+                                return item
+                            }, []);
+                        }
+
+                        console.log(newArr)
+                        // 当外层循环执行完时触发 --- 防止多次触发
+                        if (index == key[res].length - 1) {
+                            newArr.map((res: any) => {
+                                changeDoc(documentName + '.docx', res);
+                            });
+                        }
+                    }
+                });
+            }
+        });
+        // if (key && key.constructor == Array) {
+        //     let da: any = {};
+        //     let dd: any = {};
+        //     let documentName: string[] = [];
+        //     key.map((resInd, index) => {
+        //         // 第一份数据
+        //         const firstData = multipleCol(resInd, index, dd);
+        //
+        //         // 遍历数据获取名称
+        //         data.tabelData.map((res: typeof data.tabelData) => {
+        //             if (res.key === resInd) {
+        //                 documentName.push(res.keyName)
+        //                 // documentName = res.keyName;
+        //             }
+        //         })
+        //
+        //         // 数据小于 3的时候
+        //         if (key.length < 4) {
+        //             if (index == key.length - 1) {
+        //                 const data = multipleCol(resInd, index, da);
+        //                 console.log(documentName)
+        //                 // changeDoc( documentName + '.docx', data);
+        //             }
+        //         }
+        //         // 反之多张数据
+        //         else {
+        //             let newArr;
+        //             let arr: any[] = [];
+        //             // ((index + 1)%3 + Math.floor((index + 1)/3))
+        //             // 判断导出几次
+        //             for (let i = 0; i < Math.floor((index) / 3) + 1; i++) {
+        //                 // 获取每次循环拿到的数据
+        //                 let dacmr = multipleCol(resInd, index, da, i);
+        //
+        //                 arr.push(JSON.parse(JSON.stringify(dacmr)));
+        //                 console.log(arr)
+        //                 // 存在一个问题 第一次数据不准确， 所以直接那现成的拼凑，存在重复数据
+        //                 let list = [...arr, firstData];
+        //                 console.log(list)
+        //                 let hash: any = {};
+        //
+        //                 // 去除重复数据
+        //                 newArr = list.reduceRight((item, next) => {
+        //                     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        //                     hash[next.key] ? '' : hash[next.key] = true && item.push(next);
+        //                     return item
+        //                 }, []);
+        //             }
+        //
+        //             console.log(newArr)
+        //             // 当外层循环执行完时触发 --- 防止多次触发
+        //             if (index == key.length - 1) {
+        //                 newArr.map((res: any) => {
+        //                     changeDoc(documentName + '.docx', res);
+        //                 });
+        //             }
+        //         }
+        //     });
+        // }
     }
 
     return (
@@ -178,106 +251,6 @@ export default memo(() => {
             <button onClick={exportData}>单导出</button>
             <button>多导出</button>
             <TableDa tabelData={ tabelData }/>
-
         </>
     );
 })
-
-
-const TableDa = ({ tabelData }: any) => {
-        const [checkStrictly, setCheckStrictly] = React.useState<boolean>(false);
-
-        const rowSelection = {
-            onChange: (selectedRowKeys: any, selectedRows: any) => {
-                console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
-                if (selectedRows.length > 0) {
-                    mutations.addCeckTabel(selectedRowKeys);
-                }
-                else {
-                    mutations.addCeckTabel("");
-                }
-            },
-            onSelectAll: (selected: any, selectedRows: any, changeRows: any) => {
-                console.log(selected, selectedRows, changeRows);
-            },
-        };
-
-        return (
-            <>
-                <Space align="center" style={{ marginBottom: 16 }}>
-                    CheckStrictly: <Switch checked={checkStrictly} onChange={setCheckStrictly} />
-                </Space>
-                <Table
-                    columns={columns}
-                    rowSelection={{ ...rowSelection, checkStrictly }}
-                    dataSource={tabelData}
-                />
-            </>
-        );
-}
-
-const columns = [
-    {
-        title: 'Type',
-        dataIndex: 'key',
-        key: 'key',
-        // render: (text: string) => <a>{text.slice(0, text.length - 19)}</a>,
-        render: (text: string) => <a>{text}</a>,
-    },
-    {
-        title: '试样名称',
-        dataIndex: 'sampleName',
-        key: 'sampleName',
-    },
-    {
-        title: '型号规格',
-        dataIndex: 'type',
-        key: 'type',
-    },
-    {
-        title: '生产厂家',
-        dataIndex: 'manufacturer',
-        key: 'manufacturer',
-    },
-    {
-        title: '供销单位',
-        dataIndex: 'supplyMarket',
-        key: 'supplyMarket',
-    },
-    {
-        title: '使用部位',
-        dataIndex: 'useParts',
-        key: 'useParts',
-    },
-    {
-        title: '取（制）样数量',
-        dataIndex: 'groupNum',
-        key: 'groupNum',
-    },
-    {
-        title: '代表批量',
-        dataIndex: 'batch',
-        key: 'batch',
-    },
-    {
-        title: '养护条件',
-        dataIndex: 'maintenance',
-        key: 'maintenance',
-    },
-    {
-        title: 'Action',
-        key: 'action',
-        render: (text: any, record: any) => (
-            <>
-                <ModalView>
-                    <DescriptionsList title={ record.name } dataList={ record }></DescriptionsList>
-                </ModalView>
-                <Space size="middle">
-                    <a>Delete</a>
-                </Space>
-            </>
-        ),
-    },
-];
-
-

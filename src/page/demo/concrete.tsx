@@ -12,6 +12,7 @@ const Concrete = () => {
     const {state,  changeDoc} = useChangeDoc();
     const [BooleanVal, setBooleanVal] = useState<boolean>(false); // test显示
     const time = useGetTime();
+    const times = useGetTime(2);
     const data = useStore((store: Store) => {
         const { state } = store;
         const { settingData } = state;
@@ -57,7 +58,8 @@ const Concrete = () => {
         da.period = DateDiff(da.time, da.experimentalDate);
         da.batch = values.batch + 'm³';
         da.groupNum = values.groupNum + '组';
-        da.key = "concrete";
+        da.keyName = "concrete";
+        da.key = "concrete" + times;
         da.maintenance = values.maintenance == 0?'标准养护': values.maintenance == 1?'同条件养护': '拆模同条件养护';
         da.strength = values.strength + '100*100*100'
         let testDa = Object.assign(data.settingData, values, {sampleName: sampleName}, da);
