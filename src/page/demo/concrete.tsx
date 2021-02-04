@@ -1,15 +1,16 @@
-import React, {memo, useRef} from "react";
-import { Select, Button, Form, Input, DatePicker } from 'antd';
+import React, {memo, useRef, useState} from "react";
+import {Select, Button, Form, Input, DatePicker, message} from 'antd';
 import {useCreated, useGetTime, DateDiff, useChangeDoc} from "../../utils/hooks";
 import moment from "_moment@2.29.1@moment";
 import {useStore} from "../../store/vueStore/store";
-import {Store} from "../../store/vueStore";
+import {Store, mutations} from "../../store/vueStore";
 
 // concrete 混泥土
 const Concrete = () => {
 
     const formTab: any = useRef(null);
     const {state,  changeDoc} = useChangeDoc();
+    const [BooleanVal, setBooleanVal] = useState<boolean>(false); // test显示
     const time = useGetTime();
     const data = useStore((store: Store) => {
         const { state } = store;
@@ -21,7 +22,6 @@ const Concrete = () => {
 
     useCreated(() => {
         if (formTab != null) {
-            // @ts-ignore
             formTab.current.setFieldsValue({time: moment(time)})
         }}
     );
@@ -51,19 +51,23 @@ const Concrete = () => {
         else {
             sampleName = "拆模混凝土抗压试块";
         }
-        console.log(data.settingData)
-        console.log(sampleName)
-        console.log(values);
         const da: any = {};
         da.experimentalDate = moment(values.experimentalDate).format('YYYY-MM-DD')
         da.time = moment(values.time).format('YYYY-MM-DD')
         da.period = DateDiff(da.time, da.experimentalDate);
         da.batch = values.batch + 'm³';
         da.groupNum = values.groupNum + '组';
+        da.key = "concrete";
         da.maintenance = values.maintenance == 0?'标准养护': values.maintenance == 1?'同条件养护': '拆模同条件养护';
         da.strength = values.strength + '100*100*100'
         let testDa = Object.assign(data.settingData, values, {sampleName: sampleName}, da);
-        changeDoc('d.docx', testDa);
+        if (BooleanVal) {
+            changeDoc('concrete.docx', testDa);
+        }
+        else {
+            mutations.addTabelData(testDa);
+            message.success('提交成功');
+        }
     };
 
 
@@ -118,6 +122,9 @@ const Concrete = () => {
                     </Button>
                 </Form.Item>
             </Form>
+
+            <button onClick={() => {setBooleanVal(true);message.success('开启成功');}}>测试 doc open</button>
+            <button onClick={() => {setBooleanVal(false);message.success('关闭成功');}}>测试 doc close</button>
         </>
     );
 }

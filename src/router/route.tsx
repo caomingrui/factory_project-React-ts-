@@ -17,6 +17,9 @@ const routes: Routes[] = [
         path: '/test', exact: true, component: React.lazy(() => import('../page/test/index')), children: [], // Hoc 模式练习
     },
     {
+        path: '/render', exact: true, component: React.lazy(() => import('../page/test/principle')), children: [], // 渲染原理练习
+    },
+    {
         path: '/Home', component: React.lazy(() => import('../page/demo/index')), children: [
             {
                 path: '/Home/reinforc', name: '钢筋原料', component: React.lazy(() => import('../page/demo/reinforc')),
@@ -55,6 +58,3 @@ const routes: Routes[] = [
 export const isState = false;
 
 export default routes;
-
-
-

@@ -210,7 +210,7 @@ export function useGetTime(format: number = 1) {
     return time;
 }
 
-
+// 比较时间差
 export function DateDiff(faultDate: string, completeTime: string): number{
     let stime =new Date(faultDate).getTime();
     let etime = new Date(completeTime).getTime();

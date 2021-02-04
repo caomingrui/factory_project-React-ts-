@@ -2,38 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="614be0ac-d2ea-4b5d-adb7-d93c0476a1f9" name="Default Changelist" comment="补充">
-      <change afterPath="$PROJECT_DIR$/shims-vue.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/declaration.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/demo/brick.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/demo/concrete.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/demo/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/demo/mortar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/demo/query/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/demo/reinforc.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/demo/setting/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/demo/sleeve.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/demo/soil/dust.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/demo/soil/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/demo/soil/plainSoil.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/demo/soil/ringKnife.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/demo/switch.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/demo/waterproof.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/test/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/test6.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/page/testDoc.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/router/route.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/demo/component/Descriptions.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/demo/component/Modal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/demo/hooks/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/test/principle.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/test3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/test3.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/test4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/test4.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/text.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/text.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/d.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/~$a.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/demo/brick.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/demo/brick.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/demo/concrete.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/demo/concrete.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/demo/query/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/demo/query/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/demo/sleeve.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/demo/sleeve.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/demo/switch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/demo/switch.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/demo/waterproof.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/demo/waterproof.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/route.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/route.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/vueStore/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/vueStore/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/vueStore/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/vueStore/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/ContextState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ContextState.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/hooks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/hooks.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +107,10 @@
       <workItem from="1611887963916" duration="1238000" />
       <workItem from="1611891747613" duration="343000" />
       <workItem from="1611892125076" duration="8499000" />
-      <workItem from="1612147238693" duration="14467000" />
+      <workItem from="1612147238693" duration="19250000" />
+      <workItem from="1612233247421" duration="23027000" />
+      <workItem from="1612320563964" duration="22626000" />
+      <workItem from="1612406468281" duration="9097000" />
     </task>
     <task id="LOCAL-00001" summary="react route 练习 --- QAQ">
       <created>1610707699920</created>

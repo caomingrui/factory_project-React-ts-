@@ -6,28 +6,48 @@ const changeCount = (): void => {
 }
 
 // 保存setting 数据
-const changeSetting = (states: any) => {
+function changeSetting<T>(states: T) {
     console.log(states)
     state.settingData = states;
+}
+
+// 添加表单数据
+function addTabelData<T>(states: T) {
+    console.log('------------------------------')
+    let data = JSON.parse(JSON.stringify(states));
+    state.tabelData.push(data);
+}
+
+// 添加选中表单数据
+function addCeckTabel<T>(states: T): void {
+    console.log('++++++++++++++++++++++++++++++++++')
+    console.log(states)
+    state.checkTabelData = states;
 }
 
 // vue3.0特性 + react 测试版 1.0.0
 export interface State {
     count: number,
-    settingData: any
+    settingData: any,
+    tabelData: any,
+    checkTabelData: any
 }
 
 // store 数据
 const state: State = reactive({
     count: 0,
-    settingData: JSON.parse(<string>localStorage.getItem('setData'))?JSON.parse(<string>localStorage.getItem('setData')): {}
+    settingData: JSON.parse(<string>localStorage.getItem('setData'))? JSON.parse(<string>localStorage.getItem('setData')): {},
+    tabelData: [],
+    checkTabelData: []
 });
 
 
 // 方法集
 export const mutations = {
     changeCount,
-    changeSetting
+    changeSetting,
+    addTabelData,
+    addCeckTabel
 }
 
 
