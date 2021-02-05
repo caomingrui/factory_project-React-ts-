@@ -12,7 +12,7 @@ export type Data = {
     supplyMarket: string,
     manufacturer: string,
     key: string,
-    uuid: string
+    keyName: string
 }
 
 // use 套筒 模板
@@ -35,9 +35,10 @@ export function useSleeve() {
         da.sampleName = "直螺纹套筒连接";
         da.supplyMarket = "厂供";
         da.key = "sleeve";
-        da.uuid = da.key + times;
+        da.keyName = "sleeve";
+        da.key = "sleeve" + times;
         da.manufacturer = data.settingData.manufacturer;
-        let testDa = Object.assign(values, da);
+        let testDa = Object.assign(data.settingData, values, da);
 
         if (BooleanVal) {
             if (values.groupNum <= 1) {
@@ -48,10 +49,10 @@ export function useSleeve() {
                 let dataList: typeof testDa = {};
                 for (let i = 0; i < 3; i++) { //当批量大于500 生成多列
                     Object.keys(testDa).map(res => {
-                        if (res == 'groupNum') {
+                        if (res === 'groupNum') {
                             dataList['groupNum' + i] = Math.ceil(values.groupNum) > i?"1组": ''; // 组数
                         }
-                        else if (res == 'batch') {
+                        else if (res === 'batch') {
                             dataList['batch' + i] = (values.batch - (500 * i)) > 0?(values.batch - (500 * i))>500? 500: (values.batch - (500 * i)): ''; // 批量数
                         }
                         else {

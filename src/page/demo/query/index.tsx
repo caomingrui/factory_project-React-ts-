@@ -1,12 +1,11 @@
 import React, {memo, useState} from "react";
-import {Table, Switch, Space, Button, DatePicker} from 'antd';
+import {Button, DatePicker, Input} from 'antd';
 import {useStore} from "../../../store/vueStore/store";
-import {mutations, Store} from "../../../store/vueStore";
-import DescriptionsList from "../component/Descriptions";
+import {Store} from "../../../store/vueStore";
 import TableDa from "../component/tabel";
-import ModalView from "../component/Modal";
 import { useQueryEvent } from "../hooks/queryEvent";
 import {useChangeDoc} from "../../../utils/hooks";
+import moment from "_moment@2.29.1@moment";
 
 const type = [
     {key: 'reinforc', val: '钢筋原料'},
@@ -30,11 +29,19 @@ export default memo(() => {
     const [tabelData, setTabelData] = useState(data.tabelData);
     const {state,  changeDoc} = useChangeDoc();
     const { multipleCol, dealWithWater } = useQueryEvent();
+    // 筛选时间
+    const [timeVal, setTimeVal] = useState<any>();
+    // 筛选部位
+    const [partsVal, setPartsVal] = useState<string>();
     // 过滤
     function filter<T extends []>(data: T, key: string) {
+        // 清空筛选条件
+        setTimeVal(null);
+        setPartsVal('');
+        // timeRef.current.props.onChange();
         let arr: any = [];
         data.map((res: any) => {
-            if (res.keyName == key) {
+            if (res.keyName === key) {
                 arr.push(res);
             }
         });
@@ -50,8 +57,8 @@ export default memo(() => {
         console.log(key)
         Object.keys(key).map((res, ind) => {
 
-            let da: any = {};
-            let dd: any = {};
+            let da: typeof data.tabelData = {};  // 导出数据存储
+            let dd: typeof data.tabelData = {}; // 第一份数据存储
             if (key && key[res].constructor == Array) {
                 // 获取名称
                 let documentName = res;
@@ -61,8 +68,10 @@ export default memo(() => {
                     // const firstData = multipleCol(resInd, index, dd);
                     let firstData;
                     // 当类型为waterproof处理
-                    if (documentName == "waterproof") {
-                        firstData = dealWithWater(resInd, resInd.index, da, 0 );
+                    if (documentName === "waterproof" || documentName === "switch" || documentName === "sleeve") {
+                        console.log('------- 执行 -------', key[res].length)
+                        firstData = dealWithWater(resInd, resInd.index, dd, 0 );
+                        console.log(firstData)
                     }
                     else {
                         firstData = multipleCol(resInd, index, dd);
@@ -73,7 +82,7 @@ export default memo(() => {
 
                         console.log(documentName, resInd.index);
                         let data;
-                        if (documentName == "waterproof") {
+                        if (documentName === "waterproof" || documentName === "switch" || documentName === "sleeve") {
                             console.log('????')
                             data = dealWithWater(resInd, resInd.index, da, 0 );
                         }
@@ -84,6 +93,7 @@ export default memo(() => {
                         // 当外层循环执行完时触发 --- 防止多次触发
                         if (index == key[res].length - 1) {
                             // 导出
+                            console.log(data)
                             changeDoc( documentName + '.docx', data);
                         }
                     }
@@ -98,7 +108,7 @@ export default memo(() => {
 
                             // 当类型为waterproof处理
                             let dacmr;
-                            if (documentName == "waterproof") {
+                            if (documentName === "waterproof" || documentName === "switch" || documentName === "sleeve") {
                                 console.log('????', resInd.index)
                                 dacmr = dealWithWater(resInd, resInd.index, da, i);
                                 console.log(dacmr)
@@ -126,6 +136,7 @@ export default memo(() => {
                         // 当外层循环执行完时触发 --- 防止多次触发
                         if (index == key[res].length - 1) {
                             newArr.map((res: any) => {
+                                console.log(res)
                                 changeDoc(documentName + '.docx', res);
                             });
                         }
@@ -133,6 +144,43 @@ export default memo(() => {
                 });
             }
         });
+    }
+
+    // 筛选时间
+    function screenTime<T>(date: T, dateString: string) {
+        let tim = moment(dateString);
+        setTimeVal(tim);
+        let arr: typeof tabelData = [];
+        const checkTime = dateString;
+        tabelData.map((res: any ) => {
+            if (res.time == checkTime) {
+                console.log(res)
+                arr.push(res);
+            }
+        });
+        setTabelData([]);
+        setTimeout(() => {
+            setTabelData(arr);
+        }, 200)
+    }
+
+    // 筛选部位
+    function screeningParts<T>({ target }: any) {
+        const val: string = target.value;
+        setPartsVal(val);
+
+        let arr: typeof tabelData = [];
+        tabelData.map((res: any ) => {
+            if (res.useParts == val) {
+                console.log(res);
+                arr.push(res);
+            }
+        });
+
+        setTabelData([]);
+        setTimeout(() => {
+            setTabelData(arr);
+        }, 200)
     }
 
     return (
@@ -143,11 +191,14 @@ export default memo(() => {
                 {
                     type.map(res => <Button key={res.key} onClick={() => filter(data.tabelData, res.key)}>{ res.val }</Button>)
                 }
+                <Button onClick={ () => setTabelData(data.tabelData)}>全部</Button>
             </p>
-            <p>时间: <DatePicker format="YYYY-MM-DD" /></p>
-            <button onClick={exportData}>单导出</button>
+            <p>时间: <DatePicker format="YYYY-MM-DD" onChange={screenTime} value={timeVal} /></p>
+            <p>部位: <Input onChange={screeningParts} value={partsVal} /></p>
+            <button onClick={exportData} >单导出</button>
             <button>多导出</button>
-            <TableDa tabelData={ tabelData }/>
+            <TableDa tabel={ [tabelData, setTabelData] } />
         </>
     );
-})
+});
+

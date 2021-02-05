@@ -1,6 +1,6 @@
 import React, {memo, useRef, useState} from "react";
 import {Select, Button, Form, Input, DatePicker, message} from 'antd';
-import {useBooleans, useChangeDoc, useCreated, useGetTime} from "../../utils/hooks";
+import {useChangeDoc, useCreated, useGetTime} from "../../utils/hooks";
 import moment from "_moment@2.29.1@moment";
 import {mutations, Store} from "../../store/vueStore";
 import {useStore} from "../../store/vueStore/store";
@@ -11,20 +11,21 @@ const level: string[] = ['HPB235', 'HPB300', 'HRB335', 'HRB335E', 'HRB400', 'HRB
 // 规格
 const size: number[] = [12, 14, 16, 18, 20];
 
-// switch 电渣压力焊 -- ok
+// switch 电渣压力焊
 const Switch = () => {
 
     const formTab: any = useRef(null);
     const [BooleanVal, setBooleanVal] = useState<boolean>(false); // test显示
     const {state,  changeDoc} = useChangeDoc();
     const time = useGetTime();
+    const times = useGetTime(2);
     const data = useStore((store: Store) => {
         const { settingData } = store.state;
         return {
             settingData
         }
     });
-
+    console.log(state)
     useCreated(() => {
         if (formTab != null) {
             formTab.current.setFieldsValue({time: moment(time)})
@@ -34,8 +35,9 @@ const Switch = () => {
     const onFinish = (values: any) => {
         let da: typeof values = {};
         da.time = moment(values.time).format('YYYY-MM-DD');
-        da.key = "switch";
         da.sampleName = "电渣压力焊";
+        da.keyName = "switch";
+        da.key = "switch" + times;
         da.type = values.level + values.size;
         let testDa = Object.assign(data.settingData, values, da);
         if (BooleanVal) {

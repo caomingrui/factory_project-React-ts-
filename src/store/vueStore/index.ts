@@ -1,5 +1,7 @@
 import { reactive } from "@vue/reactivity";
 
+export type StatesData = typeof state.tabelData;
+
 //测试 count ++
 const changeCount = (): void => {
     state.count += 1;
@@ -25,6 +27,11 @@ function addCeckTabel<T>(states: T): void {
     state.checkTabelData = states;
 }
 
+// 删除表单数据
+function deleteFormData(newStates: StatesData) {
+    state.tabelData = newStates;
+}
+
 // vue3.0特性 + react 测试版 1.0.0
 export interface State {
     count: number,
@@ -47,7 +54,8 @@ export const mutations = {
     changeCount,
     changeSetting,
     addTabelData,
-    addCeckTabel
+    addCeckTabel,
+    deleteFormData
 }
 
 

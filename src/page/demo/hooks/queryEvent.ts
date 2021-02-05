@@ -17,9 +17,9 @@ export const useQueryEvent = () => {
             if (res.key === resInd.key) {
 
                 Object.keys(res).map(list => {
-                    if (i == 0) {
+                    if (i === 0) {
                         console.log('11111111111111111111111111111')
-                        if (index == 0) {
+                        if (index === 0) {
                             da[list] = res[list];
                             da['ind0'] = 1;
                             da[list + 1] = "";
@@ -28,22 +28,22 @@ export const useQueryEvent = () => {
                             da['ind' + 2] = "";
                         }
 
-                        if (index == 1) {
+                        if (index === 1) {
                             da[list + '1'] = res[list];
                             da['ind1'] = 2;
                             da[list + 2] = "";
                             da['ind' + 2] = "";
                         }
 
-                        if (index == 2) {
+                        if (index === 2) {
                             da[list + '2'] = res[list];
                             da['ind2'] = 3;
                         }
                     }
-                    if ( i != 0) {
+                    if ( i !== 0) {
                         if (index > 2) {
                             console.log('222222222222222222222222222222222')
-                            if (index%3 == 0) {
+                            if (index%3 === 0) {
                                 da[list] = res[list];
                                 da['ind0'] = 1;
                                 da['ind1'] = "";
@@ -52,14 +52,14 @@ export const useQueryEvent = () => {
                                 da[list + 2] = "";
                             }
 
-                            if (index%3 == 1) {
+                            if (index%3 === 1) {
                                 da[list + 1] = res[list];
                                 da['ind1'] = 2;
                                 da[list + 2] = "";
                                 da['ind2'] = "";
                             }
 
-                            if (index%3 == 2) {
+                            if (index%3 === 2) {
                                 da[list + 2] = res[list];
                                 da['ind2'] = 3;
                             }
@@ -75,13 +75,13 @@ export const useQueryEvent = () => {
     // 处理waterproof
     function dealWithWater<T> (resInd: any, index: number, da: any, i: number = 0) {
         data.tabelData.map((res: typeof data.tabelData) => {
-            if (res.key == resInd.key) {
+            if (res.key === resInd.key) {
                 console.log(res);
                 Object.keys(res).map(list => {
 
-                    if (i == 0) {
+                    if (i === 0) {
                         console.log('11111111111111111111111111111')
-                        if (index == 0) {
+                        if (index === 0) {
                             da[list] = res[list];
                             da["batch"] = resInd.batch;
                             da['ind0'] = 1;
@@ -92,7 +92,7 @@ export const useQueryEvent = () => {
 
                         }
 
-                        if (index == 1) {
+                        if (index === 1) {
                             da[list + '1'] = res[list];
                             da['ind1'] = 2;
                             da[list + 2] = "";
@@ -101,15 +101,16 @@ export const useQueryEvent = () => {
 
                         }
 
-                        if (index == 2) {
+                        if (index === 2) {
                             da[list + '2'] = res[list];
                             da['ind2'] = 3;
+                            da["batch2"] = resInd.batch;
                         }
                     }
-                    if ( i != 0) {
+                    if ( i !== 0) {
                         if (index > 2) {
                             console.log('222222222222222222222222222222222')
-                            if (index%3 == 0) {
+                            if (index%3 === 0) {
                                 da[list] = res[list];
                                 da["batch"] = resInd.batch;
                                 da['ind0'] = 1;
@@ -119,7 +120,7 @@ export const useQueryEvent = () => {
                                 da[list + 2] = "";
                             }
 
-                            if (index%3 == 1) {
+                            if (index%3 === 1) {
                                 da[list + 1] = res[list];
                                 da['ind1'] = 2;
                                 da[list + 2] = "";
@@ -127,9 +128,10 @@ export const useQueryEvent = () => {
                                 da["batch1"] = resInd.batch;
                             }
 
-                            if (index%3 == 2) {
+                            if (index%3 === 2) {
                                 da[list + 2] = res[list];
                                 da['ind2'] = 3;
+                                da["batch2"] = resInd.batch;
                             }
                         }
                     }
