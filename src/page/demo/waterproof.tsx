@@ -12,6 +12,7 @@ const Waterproof = () => {
 
     const formTab: any = useRef(null);
     const time = useGetTime();
+    const times = useGetTime(2);
     const [BooleanVal, setBooleanVal] = useState<boolean>(false); // test显示
     const {state,  changeDoc} = useChangeDoc();
     const data = useStore((store: Store) => {
@@ -34,8 +35,9 @@ const Waterproof = () => {
         let da: typeof values = {};
         da.time = moment(values.time).format('YYYY-MM-DD');
         da.samplingDate = moment(values.samplingDate).format('YYYY-MM-DD');
-        da.key = "waterproof";
         da.sampleName = "弹性体改性沥青防水卷材";
+        da.keyName = "waterproof";
+        da.key = "waterproof" + times;
         let testDa = Object.assign(data.settingData, values, da);
         if (BooleanVal) {
             changeDoc('waterproof.docx', testDa);

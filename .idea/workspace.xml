@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="614be0ac-d2ea-4b5d-adb7-d93c0476a1f9" name="Default Changelist" comment="资源">
-      <change afterPath="$PROJECT_DIR$/src/page/demo/component/tabel.tsx" afterDir="false" />
+    <list default="true" id="614be0ac-d2ea-4b5d-adb7-d93c0476a1f9" name="Default Changelist" comment="导出 升级版">
+      <change afterPath="$PROJECT_DIR$/src/page/demo/hooks/queryEvent.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/concrete.docx" beforeDir="false" afterPath="$PROJECT_DIR$/public/concrete.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/demo/concrete.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/demo/concrete.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/waterproof.docx" beforeDir="false" afterPath="$PROJECT_DIR$/public/waterproof.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/demo/component/tabel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/demo/component/tabel.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/page/demo/query/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/demo/query/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/demo/waterproof.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/demo/waterproof.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -99,7 +100,8 @@
       <workItem from="1612147238693" duration="19250000" />
       <workItem from="1612233247421" duration="23027000" />
       <workItem from="1612320563964" duration="22626000" />
-      <workItem from="1612406468281" duration="17351000" />
+      <workItem from="1612406468281" duration="22697000" />
+      <workItem from="1612493320991" duration="6722000" />
     </task>
     <task id="LOCAL-00001" summary="react route 练习 --- QAQ">
       <created>1610707699920</created>
@@ -178,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612422698952</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="导出 升级版">
+      <created>1612430540059</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1612430540059</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +218,8 @@
     <MESSAGE value="表单与查询联动" />
     <MESSAGE value="导出多张world" />
     <MESSAGE value="资源" />
-    <option name="LAST_COMMIT_MESSAGE" value="资源" />
+    <MESSAGE value="导出 升级版" />
+    <option name="LAST_COMMIT_MESSAGE" value="导出 升级版" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
