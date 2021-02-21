@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="614be0ac-d2ea-4b5d-adb7-d93c0476a1f9" name="Default Changelist" comment="调整1" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1n5z1zfsDvVbTKbeNpxFMzd0dmH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="kite.configurable" />
+    <property name="ts.external.directory.path" value="D:\demo\factory_project-React-ts--main\node_modules\typescript\lib" />
+    <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/src/page/demo/reinforc" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\react-study\react-app\src\store\vueStore" />
+      <recent name="E:\react-study\react-app\src\utils" />
+      <recent name="E:\react-study\react-app" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="614be0ac-d2ea-4b5d-adb7-d93c0476a1f9" name="Default Changelist" comment="" />
+      <created>1610694528860</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610694528860</updated>
+      <workItem from="1610694531613" duration="6785000" />
+      <workItem from="1610701660166" duration="5804000" />
+      <workItem from="1610937572150" duration="22511000" />
+      <workItem from="1611024001501" duration="7337000" />
+      <workItem from="1611110362290" duration="2723000" />
+      <workItem from="1611114073404" duration="11208000" />
+      <workItem from="1611132306467" duration="258000" />
+      <workItem from="1611132647244" duration="1075000" />
+      <workItem from="1611133903132" duration="6876000" />
+      <workItem from="1611196725845" duration="20041000" />
+      <workItem from="1611224892087" duration="589000" />
+      <workItem from="1611283318216" duration="1136000" />
+      <workItem from="1611285867915" duration="16103000" />
+      <workItem from="1611542917653" duration="758000" />
+      <workItem from="1611629329065" duration="2685000" />
+      <workItem from="1611641290847" duration="597000" />
+      <workItem from="1611642470804" duration="2055000" />
+      <workItem from="1611715185292" duration="8971000" />
+      <workItem from="1611801601284" duration="22336000" />
+      <workItem from="1611887963916" duration="1238000" />
+      <workItem from="1611891747613" duration="343000" />
+      <workItem from="1611892125076" duration="8499000" />
+      <workItem from="1612147238693" duration="19250000" />
+      <workItem from="1612233247421" duration="23027000" />
+      <workItem from="1612320563964" duration="22626000" />
+      <workItem from="1612406468281" duration="22697000" />
+      <workItem from="1612493320991" duration="21059000" />
+      <workItem from="1612688954176" duration="1097000" />
+      <workItem from="1612749670091" duration="3444000" />
+      <workItem from="1612783165383" duration="2063000" />
+      <workItem from="1612835385891" duration="1781000" />
+      <workItem from="1612922510050" duration="1267000" />
+      <workItem from="1613009446180" duration="1212000" />
+      <workItem from="1613033794614" duration="564000" />
+      <workItem from="1613130781173" duration="590000" />
+      <workItem from="1613208586188" duration="590000" />
+      <workItem from="1613270423907" duration="1197000" />
+      <workItem from="1613441122816" duration="1199000" />
+      <workItem from="1613528472890" duration="5649000" />
+      <workItem from="1613614621824" duration="7820000" />
+      <workItem from="1613700728730" duration="7171000" />
+      <workItem from="1613915024479" duration="504000" />
+    </task>
+    <task id="LOCAL-00001" summary="react route 练习 --- QAQ">
+      <created>1610707699920</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1610707699920</updated>
+    </task>
+    <task id="LOCAL-00002" summary="react route 练习 --- 之history假路由doge">
+      <created>1610962306250</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1610962306250</updated>
+    </task>
+    <task id="LOCAL-00003" summary="react route 练习 --- 之history假路由doge1.0.0">
+      <created>1610964477469</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1610964477469</updated>
+    </task>
+    <task id="LOCAL-00004" summary="react route 练习 --- 之history假路由doge1.0.1">
+      <created>1611027032817</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1611027032817</updated>
+    </task>
+    <task id="LOCAL-00005" summary="react 实现 使用vue3.0新特性双向绑定">
+      <created>1611138649654</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1611138649654</updated>
+    </task>
+    <task id="LOCAL-00006" summary="react hooks 模拟watch and Context 实现去哪聚数据共享">
+      <created>1611284355249</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1611284355249</updated>
+    </task>
+    <task id="LOCAL-00007" summary=" .">
+      <created>1611284398915</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1611284398915</updated>
+    </task>
+    <task id="LOCAL-00008" summary="补充">
+      <created>1611543063313</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1611543063313</updated>
+    </task>
+    <task id="LOCAL-00009" summary="表单与查询联动">
+      <created>1612422647620</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1612422647621</updated>
+    </task>
+    <task id="LOCAL-00010" summary="导出多张world">
+      <created>1612422682468</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1612422682468</updated>
+    </task>
+    <task id="LOCAL-00011" summary="资源">
+      <created>1612422698952</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1612422698952</updated>
+    </task>
+    <task id="LOCAL-00012" summary="导出 升级版">
+      <created>1612430540059</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1612430540059</updated>
+    </task>
+    <task id="LOCAL-00013" summary="导出 防水卷材 根据批量生成第二组OK">
+      <created>1612506125333</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1612506125333</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="react route 练习 --- QAQ" />
+    <MESSAGE value="react route 练习 --- 之history假路由doge" />
+    <MESSAGE value="react route 练习 --- 之history假路由doge1.0.0" />
+    <MESSAGE value="react route 练习 --- 之history假路由doge1.0.1" />
+    <MESSAGE value="react 实现 使用vue3.0新特性双向绑定" />
+    <MESSAGE value="react hooks 模拟watch and Context 实现去哪聚数据共享" />
+    <MESSAGE value=" ." />
+    <MESSAGE value="根据 aHooks 自定义 useHooks" />
+    <MESSAGE value="补充" />
+    <MESSAGE value="表单与查询联动" />
+    <MESSAGE value="导出多张world" />
+    <MESSAGE value="资源" />
+    <MESSAGE value="导出 升级版" />
+    <MESSAGE value="导出 防水卷材 根据批量生成第二组OK" />
+    <MESSAGE value="调整" />
+    <option name="LAST_COMMIT_MESSAGE" value="调整" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="294" key="FileChooserDialogImpl" timestamp="1613915527153">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="740" y="294" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1613915527153" />
+    <state x="662" y="243" width="596" height="594" key="find.popup" timestamp="1613704684496">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="662" y="243" width="596" height="594" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1613704684496" />
+    <state x="623" y="235" key="search.everywhere.popup" timestamp="1613533355479">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="623" y="235" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1613533355479" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
